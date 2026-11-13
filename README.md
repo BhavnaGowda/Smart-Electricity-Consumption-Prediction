@@ -1,30 +1,44 @@
 # ⚡ Smart Electricity Consumption Prediction Using Machine Learning
 
-A machine learning-based project that analyzes historical household electricity consumption and predicts future energy usage. The project also provides an interactive dashboard built using Streamlit for data visualization, model comparison, and consumption forecasting.
+An end-to-end machine learning project that analyzes historical household electricity consumption, predicts future hourly energy usage, and provides an interactive dashboard for visualization and forecasting.
+
+<p align="center">
+
+  **🌐 Live Dashboard:** [Open Application](https://smart-electricity-consumption-prediction-9ykdvmvgtje5afqdj9ckh.streamlit.app/)
+
+  **💻 GitHub Repository:** [Smart Electricity Consumption Prediction](https://github.com/BhavnaGowda/Smart-Electricity-Consumption-Prediction)
+
+</p>
+
+---
+
+## 🌐 Live Application
+
+Explore the deployed application:
+
+**[⚡ Smart Electricity Consumption Prediction – Streamlit Dashboard](https://smart-electricity-consumption-prediction-9ykdvmvgtje5afqdj9ckh.streamlit.app/)**
+
+The application is deployed using **Streamlit Community Cloud** and provides interactive data analysis, model comparisons, electricity consumption forecasting, and energy insights.
+
+---
 
 ## 📌 Project Overview
 
-Electricity consumption forecasting helps households understand their energy usage patterns and make informed decisions about energy management.
+Electricity consumption forecasting plays an important role in understanding household energy usage and supporting efficient energy management.
 
 This project uses historical household electricity consumption data and machine learning algorithms to predict hourly electricity consumption.
 
-The system includes:
-- Data preprocessing and cleaning
-- Exploratory Data Analysis (EDA)
-- Feature engineering
-- Machine learning model training
-- Model performance evaluation
-- Hourly electricity consumption prediction
-- Interactive Streamlit dashboard
+The system follows an end-to-end machine learning workflow, including data preprocessing, exploratory data analysis, feature engineering, model training, evaluation, and deployment through an interactive Streamlit dashboard.
 
 ## 🎯 Objectives
 
 - Analyze historical household electricity consumption.
 - Identify electricity usage patterns and trends.
-- Apply different machine learning algorithms for prediction.
-- Compare models using standard evaluation metrics.
+- Perform data preprocessing and feature engineering.
+- Implement multiple machine learning regression algorithms.
+- Evaluate and compare model performance.
 - Predict future hourly electricity consumption.
-- Develop an interactive dashboard for visualization and prediction.
+- Develop an interactive dashboard for visualization and forecasting.
 
 ## 📊 Dataset
 
@@ -32,11 +46,15 @@ The system includes:
 
 Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption)
 
-Dataset details:
-- Approximately 2.07 million minute-level measurements.
-- Data collected between December 2006 and November 2010.
-- Hourly electricity consumption is derived from the original measurements.
+Dataset information:
+
+- Original measurements: Approximately 2.07 million records.
+- Collection period: December 2006 – November 2010.
+- Original measurement frequency: One minute.
+- Processed data: Hourly electricity consumption.
 - Missing values are handled during preprocessing.
+
+The dataset contains household electricity measurements, which are processed and transformed into hourly consumption data for machine learning.
 
 ## 🛠️ Technologies Used
 
@@ -44,26 +62,39 @@ Dataset details:
 |---|---|
 | Programming Language | Python |
 | Data Processing | Pandas, NumPy |
-| Data Visualization | Matplotlib, Seaborn, Plotly |
-| Machine Learning | Scikit-learn, XGBoost (optional in notebook) |
-| Model Storage | Joblib |
+| Data Visualization | Plotly, Matplotlib, Seaborn |
+| Machine Learning | Scikit-learn, XGBoost |
+| Model Serialization | Joblib |
 | Dashboard | Streamlit |
-| Development Environment | VS Code, Jupyter Notebook, Google Colab |
+| Development Tools | VS Code, Jupyter Notebook, Google Colab |
+| Version Control | Git, GitHub |
+| Deployment | Streamlit Community Cloud |
+
+## ⚙️ Project Workflow
+
+1. **Data Collection:** Obtain the household electricity consumption dataset from UCI.
+2. **Data Preprocessing:** Handle missing values and prepare the dataset.
+3. **Exploratory Data Analysis:** Analyze consumption trends and patterns.
+4. **Feature Engineering:** Generate time-based features and historical consumption features.
+5. **Model Training:** Train multiple regression algorithms.
+6. **Model Evaluation:** Compare models using MAE, MSE, RMSE, and R².
+7. **Prediction:** Forecast future hourly electricity consumption.
+8. **Deployment:** Build and deploy an interactive Streamlit dashboard.
 
 ## 🤖 Machine Learning Models
 
-The following models are evaluated:
+The following models are implemented and evaluated:
 
 1. Persistence Baseline
 2. Linear Regression
 3. Decision Tree Regressor
 4. Random Forest Regressor
 5. Histogram Gradient Boosting Regressor
-6. XGBoost Regressor (optional experiment)
+6. XGBoost Regressor
 
 ## 📈 Model Performance
 
-The following results were obtained during the notebook experiments:
+The following results were obtained during the original notebook experiments:
 
 | Model | MAE | RMSE | R² |
 |---|---:|---:|---:|
@@ -74,9 +105,16 @@ The following results were obtained during the notebook experiments:
 | Decision Tree | 0.3724 | 0.5524 | 0.4452 |
 | Persistence Baseline | 0.6331 | 0.7477 | -0.0162 |
 
-**Best model in the original notebook experiment:** Histogram Gradient Boosting Regressor.
+**Best-performing model in the original notebook experiment:** Histogram Gradient Boosting Regressor.
 
-*Note: These are the original notebook experiment results. Retraining locally may produce slightly different metrics.*
+*Note: Local retraining may produce slightly different results due to differences in library versions and training behavior.*
+
+## 📏 Evaluation Metrics
+
+- **MAE (Mean Absolute Error):** Measures the average absolute difference between actual and predicted values.
+- **MSE (Mean Squared Error):** Measures the average squared prediction error.
+- **RMSE (Root Mean Squared Error):** Measures prediction error in the target variable's units.
+- **R² Score:** Measures how well the model explains the variation in the target variable.
 
 ## 📂 Project Structure
 
@@ -88,55 +126,93 @@ Smart-Electricity-Consumption-Prediction/
 │
 ├── models/
 │
-├── dataset/                         # Local dataset (not uploaded)
+├── dataset/                         # Local dataset (excluded from Git)
 │
 ├── dashboard.py                     # Streamlit dashboard
 ├── features.py                      # Feature engineering
-├── train_model.py                   # Model training
-├── best_model.joblib                # Trained model
-├── hourly_consumption.csv           # Hourly dataset
-├── actual_vs_predicted.csv          # Prediction results
-├── model_comparison_results.csv     # Model evaluation
-├── requirements.txt
+├── train_model.py                   # Model training script
+├── best_model.joblib                # Trained ML model
+├── hourly_consumption.csv           # Processed hourly dataset
+├── actual_vs_predicted.csv          # Actual vs predicted values
+├── model_comparison_results.csv     # Model evaluation results
+├── requirements.txt                 # Project dependencies
 ├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Installation and Setup
+## 📊 Dashboard Features
 
-### 1. Clone the repository
+The interactive Streamlit dashboard provides the following sections:
+
+### 1. Overview
+- Key electricity consumption statistics.
+- Dataset summary.
+- Overall consumption information.
+
+### 2. Consumption Analysis
+- Hourly electricity consumption trends.
+- Historical usage patterns.
+- Interactive visualizations.
+
+### 3. Model Comparison
+- Comparison of different machine learning models.
+- Performance evaluation metrics.
+- Model performance visualization.
+
+### 4. Prediction
+- Future hourly electricity consumption forecasting.
+- Prediction-related analysis.
+- Feature inspection and model evaluation tools.
+
+### 5. Energy Insights
+- Electricity consumption patterns.
+- Useful insights from historical usage.
+- Data-driven energy analysis.
+
+---
+
+## 🚀 Run the Project Locally
+
+### Prerequisites
+
+- Python 3.10 or later (use a version compatible with the project dependencies).
+- Git.
+- VS Code or another Python IDE.
+
+### Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/BhavnaGowda/Smart-Electricity-Consumption-Prediction.git
 ```
 
-### 2. Navigate to the project directory
+### Step 2: Navigate to the project directory
 
 ```bash
 cd Smart-Electricity-Consumption-Prediction
 ```
 
-### 3. Create a virtual environment
+### Step 3: Create a virtual environment
 
 ```bash
 python -m venv .venv
 ```
 
-### 4. Activate the virtual environment
+### Step 4: Activate the environment
 
-**Windows:**
+**Windows PowerShell:**
 
 ```powershell
-.venv\Scripts\activate
+.venv\Scripts\Activate.ps1
 ```
 
-### 5. Install dependencies
+### Step 5: Install dependencies
 
 ```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 6. Run the Streamlit dashboard
+### Step 6: Run the Streamlit dashboard
 
 ```bash
 python -m streamlit run dashboard.py
@@ -144,51 +220,43 @@ python -m streamlit run dashboard.py
 
 The dashboard will open in your browser.
 
-Local URL:
+**Local application URL:**
 
 http://localhost:8501
 
-## 🌐 Live Dashboard
+---
 
-The application can be deployed using Streamlit Community Cloud.
+## ☁️ Deployment
 
-**Live Demo:** Coming soon.
+The application is deployed using **Streamlit Community Cloud**.
 
-## 📊 Dashboard Features
+**Live URL:**
 
-The interactive dashboard includes:
+https://smart-electricity-consumption-prediction-9ykdvmvgtje5afqdj9ckh.streamlit.app/
 
-- **Overview:** Summary of electricity consumption data and key metrics.
-- **Consumption Analysis:** Explore hourly consumption trends and patterns.
-- **Model Comparison:** Compare machine learning model performance.
-- **Prediction:** Forecast future electricity consumption.
-- **Energy Insights:** Explore useful insights from historical consumption data.
-
-## 📏 Evaluation Metrics
-
-The models are evaluated using:
-
-- **MAE:** Mean Absolute Error
-- **MSE:** Mean Squared Error
-- **RMSE:** Root Mean Squared Error
-- **R² Score:** Coefficient of Determination
+The deployment is connected to the GitHub repository.
 
 ## 🔮 Future Enhancements
 
 - Integrate real-time electricity consumption data.
 - Improve prediction accuracy through hyperparameter optimization.
-- Add daily, weekly and monthly forecasting.
-- Develop personalized energy-saving recommendations.
-- Deploy the application for public access.
+- Extend forecasting to daily, weekly, and monthly consumption.
+- Introduce personalized energy-saving recommendations.
+- Explore advanced machine learning and deep learning models.
+- Enhance deployment and scalability.
+
+---
 
 ## 👩‍💻 Author
 
 **Bhavana Gowda**
 
-GitHub: [@BhavnaGowda](https://github.com/BhavnaGowda)
-
-Project Repository: [Smart Electricity Consumption Prediction](https://github.com/BhavnaGowda/Smart-Electricity-Consumption-Prediction)
+- GitHub: [@BhavnaGowda](https://github.com/BhavnaGowda)
+- Project Repository: [Smart Electricity Consumption Prediction](https://github.com/BhavnaGowda/Smart-Electricity-Consumption-Prediction)
+- Live Dashboard: [Streamlit Application](https://smart-electricity-consumption-prediction-9ykdvmvgtje5afqdj9ckh.streamlit.app/)
 
 ---
 
-⭐ If you find this project useful, consider giving the repository a star!
+⭐ If you find this project interesting, consider giving the repository a star!
+
+**Built with Python, Machine Learning, and Streamlit.**
