@@ -1,0 +1,49 @@
+{
+  "model": "HistGradientBoostingRegressor",
+  "features": [
+    "hour",
+    "day_of_week",
+    "month",
+    "is_weekend",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_24",
+    "lag_48",
+    "lag_168",
+    "rolling_mean_24",
+    "rolling_mean_168"
+  ],
+  "hyperparameters": {
+    "learning_rate": 0.08,
+    "max_iter": 150,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "random_state": 42
+  },
+  "train_rows": 27217,
+  "test_rows": 6805,
+  "train_end": "2010-02-06 18:00:00",
+  "test_start": "2010-02-06 19:00:00",
+  "test_end": "2010-11-26 21:00:00",
+  "local_test_metrics": {
+    "MAE": 0.3288985245489285,
+    "MSE": 0.22568623304461033,
+    "RMSE": 0.4750644514638096,
+    "R2": 0.5897187194932385
+  },
+  "original_colab_metrics": {
+    "MAE": 0.3295,
+    "RMSE": 0.476,
+    "R2": 0.5882
+  },
+  "early_stopping_iterations_used": 84,
+  "versions": {
+    "python": "3.14.3",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.1",
+    "joblib": "1.6.0"
+  }
+}
